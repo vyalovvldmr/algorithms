@@ -20,13 +20,10 @@ public class PercolationStats {
             while (!p.percolates()) {
                 i = rnd.nextInt(N) + 1;
                 j = rnd.nextInt(N) + 1;
-                while (p.isOpen(i, j)) {
-                    i = rnd.nextInt(N) + 1;
-                    j = rnd.nextInt(N) + 1;
+                if (!p.isOpen(i, j)) {
+                    openSiteAmount++;
+                    p.open(i, j);
                 }                
-
-                openSiteAmount++;
-                p.open(i, j);
             }
             openSiteFractions[k] = openSiteAmount / (N * N);
         }
