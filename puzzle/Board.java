@@ -151,18 +151,4 @@ public class Board {
 
         return str;
     }
-
-    public static void main(String[] args) {
-        Board board = new Board(new int[][]{{7, 5, 0}, {6, 4, 2}, {3, 8, 1}});
-        Board board1= new Board(new int[][]{{7, 5, 0}, {6, 4, 2}, {3, 8, 1}});
-        System.out.println(board.equals(board1));
-        System.out.println(board.toString());
-        System.out.println(board.twin().toString());
-        System.out.println(board.hamming());
-        System.out.println(board.manhattan());
-
-        for (Board b : board.neighbors()) {
-            System.out.println(b.toString());
-        }
-    }
 }
